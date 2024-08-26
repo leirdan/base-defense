@@ -3,7 +3,7 @@
 O mundo assim como no principio se torna escuro e vazio, com a calamidade das criaturas com a soberania Skulls Archers, que a todo custo querem o mundo a sua imagem e semelhança. Apenas o nosso herói pode mudar a história completando sua invocação arcana de poderoso nivel para trazer a luz novamente.
 
 ### Requisitos
-- Ambiente Windows;
+- estar em um ambiente Windows (preferencialmente);
 - Possuir o GCC 13.1.0 ou versão superior;
 - De preferência, estar utilizando o Visual Studio Code;
 - Possuir o `make` instalado;
@@ -108,7 +108,7 @@ Para uma melhor visualização, visite a seção **Documentação.**
 - Colisões: A detecção de colisões é gerenciada para interações entre projéteis, herói, inimigos e base.
 - Herança: Foi criada uma classe pai denominada <i>Entity</i>, que contém métodos e atributos comuns a todos os objetos do jogo. A partir dessa classe, foram derivadas as classes filhas <i>Base</i> e <i>Character</i>. A classe <i>Character</i> foi dividida em duas subclasses: <i>Hero</i> e <i>Enemy</i>. Cada uma dessas classes herda os atributos e métodos comuns de <i>Entity</i>, permitindo que compartilhem comportamentos básicos enquanto ainda podem definir seus próprios comportamentos específicos.
 - Polimorfismo: Para permitir que diferentes classes possam ter comportamentos específicos, alguns métodos foram declarados como <i>virtual</i>, permitindo que as classes derivadas sobrescrevam esses métodos e implementem comportamentos específicos. Isso permite, por exemplo, que tanto o herói quanto os inimigos tenham métodos de movimento ou ataque com comportamentos diferentes, mas ainda sejam chamados de forma genérica através de um ponteiro ou referência da classe pai.
-- Métodos Genéricos: Foram implementados métodos genéricos para realizar operações comuns em diferentes tipos de objetos do jogo. Por exemplo, funções que lidam com colisões, movimentação, ou atualizações podem ser escritas de forma genérica utilizando templates, permitindo que o código funcione com diferentes tipos de entidades, como <i>Hero</i>, <i>Enemy</i>, ou <i>Base</i>, sem precisar duplicar a lógica.
+- Métodos Genéricos: Foram implementados métodos genéricos para realizar operações comuns em diferentes tipos de objetos do jogo, como a função `calculateCollisionsWithProjectiles`, presente em _Game_, que recebe uma lista de projéteis e outra de objetos derivados de _Entity_, ou a função `useItem` de _Hero_, que pode consumir qualquer item desde que este seja derivado de _Item_.
 
 #### Funcionalidades Implementadas
 
@@ -125,21 +125,20 @@ Para uma melhor visualização, visite a seção **Documentação.**
 - Quantidade Limitada de Projéteis do Herói.
 - Disparo de Projéteis pelos Inimigos em Direção ao Herói
 - Regeneração da Base: A base regenera sua estrutura ao longo do tempo.
-- Menu
+- Menu com opções de jogar, créditos e sair.
 - Dificuldade: Três niveís diferentes de dificuldades, alternando entre Fácil, Normal e Difícil.
 - Finalização do Jogo: Condições de vitória\derrota baseadas no tempo, na destruição da base ou na morte do herói.
 - Game Over e Game Win.
-- Smart Pointers.
-- Documentação com Doxygen
+- Utilização de Smart Pointers para gerenciamento automático da memória.
+- Documentação com Doxygen.
 
-##### Possíveis Erros 
-###### As animações nem sempre respondem corretamente.
-
+#### Possíveis Erros 
+- As animações nem sempre respondem corretamente.
 
 #### Funcionalidades Não Implementadas
 - Pause: Foi iniciada a implementação do Pause, contudo não finalizada.
 - Animações pendentes: Animações como dano ou regeneração de vida ou mana.
-- Diferentes tipos de inimigos: A ideia foi posta em prática, contudo sprites não rendimensionadas.
+- Diferentes tipos de inimigos: A ideia foi posta em prática, contudo não andou.
 - Ataque Corpo a Corpo: Foi iniciada a implementação do dano Corpo a Corpo, porém havia alguns erros com a colisão.
 
 
